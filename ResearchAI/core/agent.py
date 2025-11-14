@@ -1,10 +1,10 @@
 import json
 
-from ..config import client, MODEL_NAME, MAX_TOKENS, MAX_ITERATIONS
+from . import config
 from ..tools.search import web_search, format_search_results
 from ..tools.web import fetch_webpage
 from ..tools.storage import save_source
-from ..utils import load_json
+from ..utils.file_loader import load_json
 
 
 
@@ -99,15 +99,15 @@ Main Topic: [Another Topic]
         
         iteration = 0
         
-        while iteration < MAX_ITERATIONS:
+        while iteration < config.MAX_ITERATIONS:
             iteration += 1
             print(f"\n--- Iteration {iteration} ---")
             
-            response = client.chat.completions.create(
-                model=MODEL_NAME,
+            response = config.client.chat.completions.create(
+                model=config.MODEL_NAME,
                 messages=messages,
                 tools=self.tools,
-                max_tokens=MAX_TOKENS
+                max_tokens=config.MAX_TOKENS
             )
             
             assistant_message = response.choices[0].message

@@ -1,5 +1,5 @@
 from googleapiclient.discovery import build
-from ..config import GOOGLE_API_KEY, GOOGLE_CX
+from ..core.config import GOOGLE_API_KEY, GOOGLE_CX
 
 
 
