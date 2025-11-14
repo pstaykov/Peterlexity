@@ -1,0 +1,61 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "web_search",
+            "description": "Searches the web for current information. Use this when you need up-to-date facts or information not in your training data.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "The search query to execute"
+                    }
+                },
+                "required": ["query"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "fetch_webpage",
+            "description": "Fetches and reads the full content of a specific webpage. Use this when you need detailed information from a URL.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "description": "The complete URL to fetch"
+                    }
+                },
+                "required": ["url"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "save_source",
+            "description": "Saves a source citation with key information for future reference.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "Title of the source"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "URL of the source"
+                    },
+                    "key_points": {
+                        "type": "string",
+                        "description": "Brief summary of the key information from this source"
+                    }
+                },
+                "required": ["title", "url", "key_points"]
+            }
+        }
+    }
+]

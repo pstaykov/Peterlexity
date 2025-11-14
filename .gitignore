@@ -1,0 +1,44 @@
+# -----------------------------
+# PYTHON BASICS
+# -----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.log
+
+# Virtual environments
+venv/
+.env/
+.venv/
+ENV/
+env/
+
+# IDE settings
+.vscode/
+.idea/
+
+# -----------------------------
+# SECRET CONFIG / KEYS
+# -----------------------------
+# Your local config files containing API keys
+*.env
+
+# The OpenAI key or Google key anywhere
+*openai*
+*api_key*
+*key*
+*secret*
+
+# -----------------------------
+# APP DATA / GENERATED FILES
+# -----------------------------
+research.txt
+*.cache
+.cache/
+tmp/
+temp/
+data/
+outputs/
