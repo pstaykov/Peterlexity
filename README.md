@@ -1,10 +1,10 @@
 # Peterlexity — lightweight research AI toolkit
 
-Summary
+## Summary
 - Peterlexity is a small research-oriented toolkit that orchestrates lightweight search and tool-based agents for experiments.
 - Core runtime lives in the [ResearchAI](ResearchAI) package. See the entry point: [ResearchAI/main.py](ResearchAI/main.py) and config: [ResearchAI/config.py](ResearchAI/config.py).
 
-Quick links
+## Quick links
 - Project root: [README.md](README.md)  
 - Main script: [ResearchAI/main.py](ResearchAI/main.py)  
 - Configuration and env: [ResearchAI/config.py](ResearchAI/config.py), [ResearchAI/.env](ResearchAI/.env)  
@@ -13,7 +13,7 @@ Quick links
 - Tools package: [`tools.search`](ResearchAI/tools/search.py), [`tools.storage`](ResearchAI/tools/storage.py), [`tools.web`](ResearchAI/tools/web.py) — see [ResearchAI/tools](ResearchAI/tools)  
 - Utilities: [`utils.file_loader`](ResearchAI/utils/file_loader.py) — see [ResearchAI/utils/file_loader.py](ResearchAI/utils/file_loader.py)
 
-What it is and how it's made
+## What it is and how it's made
 - Purpose: provide a minimal architecture to combine a control Agent with modular Tools and simple file-based sources, enabling reproducible experiments and rapid prototyping.
 - Architecture:
   - Agent (controller) — [ResearchAI/core/agent.py](ResearchAI/core/agent.py) coordinates tool calls and retrieval from sources.
@@ -21,7 +21,7 @@ What it is and how it's made
   - Sources & config — [ResearchAI/sources.json](ResearchAI/sources.json) defines data sources; [ResearchAI/tools.json](ResearchAI/tools.json) configures available tools; runtime config is in [ResearchAI/config.py](ResearchAI/config.py) and environment overrides live in [ResearchAI/.env](ResearchAI/.env).
   - Utilities — helpers like file loading in [ResearchAI/utils/file_loader.py](ResearchAI/utils/file_loader.py).
 
-Installation
+## Installation
 1. Requirements: Python 3.10+ recommended.
 2. Create and activate a virtual environment:
    - Windows:
@@ -44,14 +44,14 @@ Installation
    - Copy or edit [ResearchAI/.env](ResearchAI/.env) to add API keys and secrets used by tools.
    - Edit [ResearchAI/config.py](ResearchAI/config.py) for runtime toggles.
 
-Usage
+## Usage
 - Run the main experiment runner:
   - python ResearchAI/main.py
 - To run specific modules for development, import the module and call its API:
   - Agent: import [`core.agent`](ResearchAI/core/agent.py) and instantiate its main class or entry function.
   - Tools: inspect [`ResearchAI/tools/search.py`](ResearchAI/tools/search.py), [`ResearchAI/tools/storage.py`](ResearchAI/tools/storage.py), and [`ResearchAI/tools/web.py`](ResearchAI/tools/web.py) for helper functions; wire them into the Agent.
 
-Development notes
+## Development notes
 - Tests: none included — add unit tests under a tests/ folder and use pytest.
 - Extending tools: implement the same interface shape as existing tools in [ResearchAI/tools](ResearchAI/tools) and add the tool entry to [ResearchAI/tools.json](ResearchAI/tools.json).
 - Data sources: edit [ResearchAI/sources.json](ResearchAI/sources.json) to add or change data endpoints or local files.
